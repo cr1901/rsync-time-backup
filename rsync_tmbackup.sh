@@ -515,7 +515,7 @@ while : ; do
 	# Create destination folder if it doesn't already exists
 	# -----------------------------------------------------------------------------
 
-	if [ -z "$(fn_find "$DEST -type d" 2>/dev/null)" ]; then
+	if [ -z "$(fn_find "$DEST -maxdepth 1 -type d" 2>/dev/null)" ]; then
 		fn_log_info "Creating destination $SSH_DEST_FOLDER_PREFIX$DEST"
 		fn_mkdir "$DEST"
 	fi
